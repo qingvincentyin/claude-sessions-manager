@@ -1,18 +1,17 @@
 ---
 name: claude-sessions-manager
 description: >
-  Manages Claude Code sessions stored on disk. Only applies to Claude Code (the
-  Anthropic CLI and VS Code extension) — not Cursor, Windsurf, Antigravity, or
-  other agents. Currently supports listing all sessions. Use this skill whenever
+  Manages Claude Code sessions stored on disk. Only applies to session files
+  created by Claude Code (Claude CLI and VS Code extension) — not session files
+  created by Cursor, Windsurf, Antigravity, or other agents.
+  Currently supports listing all sessions. Use this skill whenever
   the user asks to list sessions, show session IDs, map UUIDs to session names,
   find a past session, or asks anything like "what sessions do I have", "list my
   Claude sessions", "show session ID to name mapping", or "which session is X".
-  More session management operations (e.g., deleting sessions) will be added here
-  in future.
 license: Apache-2.0
 metadata:
   author: Vincent Yin
-  version: "1.0.1"
+  version: "1.0.2"
   requires:
     bins:
       - python3
@@ -61,7 +60,7 @@ claude --resume <session-uuid>
 ## Platform notes
 
 - **Claude Code only.** This skill reads session files written by the Anthropic
-  Claude Code CLI and VS Code extension. It does not apply to Cursor, Windsurf,
+  Claude Code CLI and VS Code extension. It does not apply to session files created by Cursor, Windsurf,
   Antigravity, or any other agent that uses different session storage.
 - Works on macOS and Linux where Claude Code stores sessions under `~/.claude/projects/`.
 - Requires Python 3 (standard on both platforms).
